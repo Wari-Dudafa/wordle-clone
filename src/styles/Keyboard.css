@@ -1,0 +1,13 @@
+/* .keyboard-container {} */
+.first-row {
+  display: flex;
+  justify-content: center;
+}
+.second-row {
+  display: flex;
+  justify-content: center;
+}
+.third-row {
+  display: flex;
+  justify-content: center;
+}
