@@ -1,0 +1,16 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 10px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    margin-bottom: 40px;
+    border-color: rgb(58, 58, 60);
+}
+
+#text {
+    color: white;
+}
