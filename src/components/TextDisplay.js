@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/TextDisplay.css";
 
 function TextDisplay(props) {
-  const [word, setWord] = useState("     ");
+  const [word] = useState(props.word);
 
   return (
     <div className="text-container">
