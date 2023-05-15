@@ -4,12 +4,7 @@ import "../styles/Button.css";
 function Button(props) {
   return (
     <div className="button-container">
-      <button
-        id="button"
-        onClick={() => {
-          console.log(props.value);
-        }}
-      >
+      <button id="button" onClick={props.onTap}>
         {props.value}
       </button>
     </div>
