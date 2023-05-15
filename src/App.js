@@ -5,18 +5,19 @@ import TextDisplay from "./components/TextDisplay";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const rightWord = 'TONES'
-  const [letter, setLetter] = useState(".");
-  const [word, setWord] = useState([".", ".", ".", ".", "."]);
+  const rightWord = "TONES";
+  const [letter, setLetter] = useState(" ");
+  const [word, setWord] = useState([" ", " ", " ", " ", " "]);
+  const [status, setStatus] = useState([1, 2, 2, 2, 2, 2]);
 
   useEffect(() => {
-    if (letter !== "." && letter !== "ENTER" && letter !== "DELETE") {
+    if (letter !== " " && letter !== "ENTER" && letter !== "DELETE") {
       let looper = true;
       let tempWord = word;
       let index = 0;
 
       while (looper) {
-        if (tempWord[index] === ".") {
+        if (tempWord[index] === " ") {
           tempWord[index] = letter;
           looper = false;
         }
@@ -26,31 +27,68 @@ function App() {
         }
       }
 
-      console.log("Letter: " + letter);
-      console.log("Temp: " + tempWord);
-      console.log("Real: " + word);
-
-      setLetter(".");
+      setLetter(" ");
       setWord(tempWord);
     } else if (letter === "ENTER") {
-      setLetter(".");
+      let tempStatus = status;
+      let flag = false;
+      for (let index = 0; index < tempStatus.length; index++) {
+        let element = tempStatus[index];
+
+        if (element === 1) {
+          tempStatus[index] = 3;
+        }
+        if (element === 2 && flag === false) {
+          tempStatus[index] = 1;
+          flag = true;
+        }
+      }
+
+      setStatus(tempStatus);
+      // setWord([" ", " ", " ", " ", " "]);
+      setLetter(" ");
+
       console.log("Enter");
     } else if (letter === "DELETE") {
-      setLetter(".");
+      setLetter(" ");
       console.log("Delete");
     }
-  }, [letter, word]);
+  }, [letter, word, status]);
 
   const textDisplay = () => {
-      // Status 1 = Current, 2 = Not done, 3 = Done
+    // Status 1 = Current, 2 = Not done, 3 = Done
     return (
       <>
-        <TextDisplay word={word} status={1}></TextDisplay>
-        <TextDisplay word={word} status={2}></TextDisplay>
-        <TextDisplay word={word} status={2}></TextDisplay>
-        <TextDisplay word={word} status={2}></TextDisplay>
-        <TextDisplay word={word} status={2}></TextDisplay>
-        <TextDisplay word={word} status={2}></TextDisplay>
+        <TextDisplay
+          word={word}
+          status={status[0]}
+          rightWord={rightWord}
+        ></TextDisplay>
+        <TextDisplay
+          word={word}
+          status={status[1]}
+          rightWord={rightWord}
+        ></TextDisplay>
+        <TextDisplay
+          word={word}
+          status={status[2]}
+          rightWord={rightWord}
+        ></TextDisplay>
+        <TextDisplay
+          word={word}
+          status={status[3]}
+          rightWord={rightWord}
+        ></TextDisplay>
+        <TextDisplay
+          word={word}
+          status={status[4]}
+          rightWord={rightWord}
+        ></TextDisplay>
+        <TextDisplay
+          word={word}
+          status={status[5]}
+          rightWord={rightWord}
+        ></TextDisplay>
       </>
     );
   };

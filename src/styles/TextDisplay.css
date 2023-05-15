@@ -1,13 +1,14 @@
-.text-container {
+.text-container-1 {
   display: flex;
   justify-content: center;
 }
 
-.text {
+.text-1 {
+  user-select: none;
   display: flex;
   align-items: center;
   background-color: rgb(58, 58, 60);
-    border: 10px;
+  border: 10px;
   border-style: solid;
   border-width: 1px;
   border-color: rgb(58, 58, 60);
@@ -21,15 +22,40 @@
   justify-content: center;
 }
 
-.text-container-inactive {
+.text-container-2 {
   display: flex;
   justify-content: center;
 }
 
-.text-inactive {
+.text-inactive-2 {
+  user-select: none;
   display: flex;
   align-items: center;
   background-color: rgb(18, 18, 19);
+  border: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(58, 58, 60);
+  padding: 15px;
+  color: white;
+  height: 23px;
+  width: 25px;
+  font-weight: 900;
+  font-size: 25px;
+  margin: 3px;
+  justify-content: center;
+}
+
+.text-container-3 {
+  display: flex;
+  justify-content: center;
+}
+
+.text-3 {
+  user-select: none;
+  display: flex;
+  align-items: center;
+  background-color: rgb(58, 58, 60);
   border: 10px;
   border-style: solid;
   border-width: 1px;
