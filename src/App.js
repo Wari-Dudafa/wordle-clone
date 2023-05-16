@@ -16,6 +16,7 @@ function App() {
       let tempWord = word;
       let index = 0;
 
+      // Check if letter should be added to word array
       while (looper) {
         if (tempWord[index] === " ") {
           tempWord[index] = letter;
@@ -39,7 +40,7 @@ function App() {
         const element = tempWord[index];
 
         if (element === " ") {
-          alert('Please complete your word before submitting')
+          alert("Please complete your word before submitting");
           return;
         }
       }
@@ -61,6 +62,7 @@ function App() {
       setLetter(" ");
       setWord([" ", " ", " ", " ", " "]);
     } else if (letter === "DELETE") {
+      // Removes the most recent non white space in the array
       setLetter(" ");
       console.log("Delete");
     }

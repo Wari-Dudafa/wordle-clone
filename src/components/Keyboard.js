@@ -3,6 +3,7 @@ import "../styles/Keyboard.css";
 
 function Keyboard(props) {
   const onTap = (value) => {
+    // Add key tapped to parent array
     props.setKey(value);
   };
 

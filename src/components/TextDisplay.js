@@ -7,10 +7,12 @@ function TextDisplay(props) {
   const [status, setStatus] = useState(props.status);
 
   useEffect(() => {
+    // Set new status
     setStatus(props.status);
     setWord(props.word)
 
     if (props.status === 1) {
+      // Makes sure last ypes word is available
       setWordBackup(word);
     }
   }, [props.status, props.word ,word]);
