@@ -71,26 +71,116 @@ function Keyboard(props) {
         ></Button>
       </div>
       <div className="second-row">
-        <Button value={"A"} onTap={() => {onTap("A");}}></Button>
-        <Button value={"S"} onTap={() => {onTap("S");}}></Button>
-        <Button value={"D"} onTap={() => {onTap("D");}}></Button>
-        <Button value={"F"} onTap={() => {onTap("F");}}></Button>
-        <Button value={"G"} onTap={() => {onTap("G");}}></Button>
-        <Button value={"H"} onTap={() => {onTap("H");}}></Button>
-        <Button value={"J"} onTap={() => {onTap("J");}}></Button>
-        <Button value={"K"} onTap={() => {onTap("K");}}></Button>
-        <Button value={"L"} onTap={() => {onTap("L");}}></Button>
+        <Button
+          value={"A"}
+          onTap={() => {
+            onTap("A");
+          }}
+        ></Button>
+        <Button
+          value={"S"}
+          onTap={() => {
+            onTap("S");
+          }}
+        ></Button>
+        <Button
+          value={"D"}
+          onTap={() => {
+            onTap("D");
+          }}
+        ></Button>
+        <Button
+          value={"F"}
+          onTap={() => {
+            onTap("F");
+          }}
+        ></Button>
+        <Button
+          value={"G"}
+          onTap={() => {
+            onTap("G");
+          }}
+        ></Button>
+        <Button
+          value={"H"}
+          onTap={() => {
+            onTap("H");
+          }}
+        ></Button>
+        <Button
+          value={"J"}
+          onTap={() => {
+            onTap("J");
+          }}
+        ></Button>
+        <Button
+          value={"K"}
+          onTap={() => {
+            onTap("K");
+          }}
+        ></Button>
+        <Button
+          value={"L"}
+          onTap={() => {
+            onTap("L");
+          }}
+        ></Button>
       </div>
       <div className="third-row">
-        <Button value={"ENTER"} onTap={() => {onTap("ENTER");}}></Button>
-        <Button value={"Z"} onTap={() => {onTap("Z");}}></Button>
-        <Button value={"X"} onTap={() => {onTap("X");}}></Button>
-        <Button value={"C"} onTap={() => {onTap("C");}}></Button>
-        <Button value={"V"} onTap={() => {onTap("V");}}></Button>
-        <Button value={"B"} onTap={() => {onTap("B");}}></Button>
-        <Button value={"N"} onTap={() => {onTap("N");}}></Button>
-        <Button value={"M"} onTap={() => {onTap("M");}}></Button>
-        <Button value={"DELETE"} onTap={() => {onTap("DELETE");}}></Button>
+        <Button
+          value={"ENTER"}
+          onTap={() => {
+            onTap("ENTER");
+          }}
+        ></Button>
+        <Button
+          value={"Z"}
+          onTap={() => {
+            onTap("Z");
+          }}
+        ></Button>
+        <Button
+          value={"X"}
+          onTap={() => {
+            onTap("X");
+          }}
+        ></Button>
+        <Button
+          value={"C"}
+          onTap={() => {
+            onTap("C");
+          }}
+        ></Button>
+        <Button
+          value={"V"}
+          onTap={() => {
+            onTap("V");
+          }}
+        ></Button>
+        <Button
+          value={"B"}
+          onTap={() => {
+            onTap("B");
+          }}
+        ></Button>
+        <Button
+          value={"N"}
+          onTap={() => {
+            onTap("N");
+          }}
+        ></Button>
+        <Button
+          value={"M"}
+          onTap={() => {
+            onTap("M");
+          }}
+        ></Button>
+        <Button
+          value={"DELETE"}
+          onTap={() => {
+            onTap("DELETE");
+          }}
+        ></Button>
       </div>
     </div>
   );

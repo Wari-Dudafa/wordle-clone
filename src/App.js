@@ -30,8 +30,21 @@ function App() {
       setLetter(" ");
       setWord(tempWord);
     } else if (letter === "ENTER") {
+      let tempWord = word;
       let tempStatus = status;
       let flag = false;
+
+      // Check for white spaces
+      for (let index = 0; index < tempWord.length; index++) {
+        const element = tempWord[index];
+
+        if (element === " ") {
+          alert('Please complete your word before submitting')
+          return;
+        }
+      }
+
+      // Update the status array
       for (let index = 0; index < tempStatus.length; index++) {
         let element = tempStatus[index];
 
@@ -45,10 +58,8 @@ function App() {
       }
 
       setStatus(tempStatus);
-      // setWord([" ", " ", " ", " ", " "]);
       setLetter(" ");
-
-      console.log("Enter");
+      setWord([" ", " ", " ", " ", " "]);
     } else if (letter === "DELETE") {
       setLetter(" ");
       console.log("Delete");

@@ -2,16 +2,18 @@ import { useState, useEffect } from "react";
 import "../styles/TextDisplay.css";
 
 function TextDisplay(props) {
-  const [word] = useState(props.word);
+  const [word, setWord] = useState(props.word);
   const [wordBackup, setWordBackup] = useState(props.word);
   const [status, setStatus] = useState(props.status);
 
   useEffect(() => {
     setStatus(props.status);
+    setWord(props.word)
+
     if (props.status === 1) {
       setWordBackup(word);
     }
-  }, [props.status]);
+  }, [props.status, props.word ,word]);
 
   const styleHandler = () => {
     if (status === 1) {
