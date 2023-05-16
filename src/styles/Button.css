@@ -3,6 +3,7 @@
 }
 
 #button {
+  user-select: none;
   background-color: rgb(129, 131, 132);
   text-decoration: none;
   border-width: 0;

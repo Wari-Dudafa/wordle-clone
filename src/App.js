@@ -10,12 +10,18 @@ function App() {
   const [word, setWord] = useState([" ", " ", " ", " ", " "]);
   const [status, setStatus] = useState([1, 2, 2, 2, 2, 2]);
 
+  const reset = () => {
+    setLetter(" ");
+    setWord([" ", " ", " ", " ", " "]);
+    setStatus([1, 2, 2, 2, 2, 2]);
+  };
+
   const onDelete = () => {
     // Removes the most recent non white space in the array
     setLetter(" ");
     console.log("Delete");
   };
-  
+
   const onEnter = () => {
     let tempWord = word;
     let tempStatus = status;
@@ -121,6 +127,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
+      <button onClick={reset}>reset (temporary component)</button>
       <div className="App">
         {textDisplay()}
         <Keyboard setKey={setLetter}></Keyboard>
