@@ -10,61 +10,73 @@ function App() {
   const [word, setWord] = useState([" ", " ", " ", " ", " "]);
   const [status, setStatus] = useState([1, 2, 2, 2, 2, 2]);
 
+  const onDelete = () => {
+    // Removes the most recent non white space in the array
+    setLetter(" ");
+    console.log("Delete");
+  };
+  
+  const onEnter = () => {
+    let tempWord = word;
+    let tempStatus = status;
+    let flag = false;
+
+    // Check for white spaces
+    for (let index = 0; index < tempWord.length; index++) {
+      const element = tempWord[index];
+
+      if (element === " ") {
+        alert("Please complete your word before submitting");
+        return;
+      }
+    }
+
+    // Update the status array
+    for (let index = 0; index < tempStatus.length; index++) {
+      let element = tempStatus[index];
+
+      if (element === 1) {
+        tempStatus[index] = 3;
+      }
+      if (element === 2 && flag === false) {
+        tempStatus[index] = 1;
+        flag = true;
+      }
+    }
+
+    setStatus(tempStatus);
+    setLetter(" ");
+    setWord([" ", " ", " ", " ", " "]);
+  };
+
+  const AddLetter = () => {
+    let looper = true;
+    let tempWord = word;
+    let index = 0;
+
+    // Check if letter should be added to word array
+    while (looper) {
+      if (tempWord[index] === " ") {
+        tempWord[index] = letter;
+        looper = false;
+      }
+      index = index + 1;
+      if (index > 4) {
+        looper = false;
+      }
+    }
+
+    setLetter(" ");
+    setWord(tempWord);
+  };
+
   useEffect(() => {
     if (letter !== " " && letter !== "ENTER" && letter !== "DELETE") {
-      let looper = true;
-      let tempWord = word;
-      let index = 0;
-
-      // Check if letter should be added to word array
-      while (looper) {
-        if (tempWord[index] === " ") {
-          tempWord[index] = letter;
-          looper = false;
-        }
-        index = index + 1;
-        if (index > 4) {
-          looper = false;
-        }
-      }
-
-      setLetter(" ");
-      setWord(tempWord);
+      AddLetter();
     } else if (letter === "ENTER") {
-      let tempWord = word;
-      let tempStatus = status;
-      let flag = false;
-
-      // Check for white spaces
-      for (let index = 0; index < tempWord.length; index++) {
-        const element = tempWord[index];
-
-        if (element === " ") {
-          alert("Please complete your word before submitting");
-          return;
-        }
-      }
-
-      // Update the status array
-      for (let index = 0; index < tempStatus.length; index++) {
-        let element = tempStatus[index];
-
-        if (element === 1) {
-          tempStatus[index] = 3;
-        }
-        if (element === 2 && flag === false) {
-          tempStatus[index] = 1;
-          flag = true;
-        }
-      }
-
-      setStatus(tempStatus);
-      setLetter(" ");
-      setWord([" ", " ", " ", " ", " "]);
+      onEnter();
     } else if (letter === "DELETE") {
-      // Removes the most recent non white space in the array
-      setLetter(" ");
-      console.log("Delete");
+      onDelete();
     }
   }, [letter, word, status]);
 
