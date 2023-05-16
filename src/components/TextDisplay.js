@@ -64,11 +64,19 @@ function TextDisplay(props) {
               </div>
             );
           } else {
-            return (
-              <div key={index} className="text-wrong">
-                {wordBackup[index].toUpperCase()}
-              </div>
-            );
+            if (rightWord.includes(wordBackup[index])) {
+              return (
+                <div key={index} className="text-exists">
+                  {wordBackup[index].toUpperCase()}
+                </div>
+              );
+            } else {
+              return (
+                <div key={index} className="text-wrong">
+                  {wordBackup[index].toUpperCase()}
+                </div>
+              );
+            }
           }
         });
       };
