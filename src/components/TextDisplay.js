@@ -57,22 +57,23 @@ function TextDisplay(props) {
 
       const HandleColours = (returnComponents) => {
         return returnComponents.map((status, index) => {
+          let id = "location-" + index;
           if (status) {
             return (
-              <div key={index} className="text-right">
+              <div id={id} key={index} className="text-right">
                 {wordBackup[index].toUpperCase()}
               </div>
             );
           } else {
             if (rightWord.includes(wordBackup[index])) {
               return (
-                <div key={index} className="text-exists">
+                <div id={id} key={index} className="text-exists">
                   {wordBackup[index].toUpperCase()}
                 </div>
               );
             } else {
               return (
-                <div key={index} className="text-wrong">
+                <div id={id} key={index} className="text-wrong">
                   {wordBackup[index].toUpperCase()}
                 </div>
               );

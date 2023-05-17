@@ -4,6 +4,7 @@
 }
 
 .text-1 {
+  animation: active-text 500ms ease-in-out;
   user-select: none;
   display: flex;
   align-items: center;
@@ -51,11 +52,29 @@
   justify-content: center;
 }
 
+/*
+#location-1 {
+  animation-delay: 250ms;
+}
+
+#location-2 {
+  animation-delay: 450ms;
+}
+
+#location-3 {
+  animation-delay: 650ms;
+}
+
+#location-4 {
+  animation-delay: 850ms;
+}
+*/
+
 .text-right {
+  animation: correct-answer 1s ease-in-out;
   user-select: none;
   display: flex;
   align-items: center;
-  background-color: rgb(85 , 140, 81);
   border: 10px;
   border-style: solid;
   border-width: 1px;
@@ -68,13 +87,14 @@
   font-size: 25px;
   margin: 3px;
   justify-content: center;
+  background-color: rgb(85, 140, 81);
 }
 
 .text-wrong {
+  animation: wrong-answer 1s ease-in-out;
   user-select: none;
   display: flex;
   align-items: center;
-  background-color: rgb(58, 58, 60);
   border: 10px;
   border-style: solid;
   border-width: 1px;
@@ -87,13 +107,14 @@
   font-size: 25px;
   margin: 3px;
   justify-content: center;
+  background-color: rgb(58, 58, 60);
 }
 
 .text-exists {
+  animation: answer-exists 1s ease-in-out;
   user-select: none;
   display: flex;
   align-items: center;
-  background-color: rgb(180, 158, 67);
   border: 10px;
   border-style: solid;
   border-width: 1px;
@@ -106,4 +127,47 @@
   font-size: 25px;
   margin: 3px;
   justify-content: center;
+  background-color: rgb(180, 158, 67);
+}
+
+@keyframes active-text {
+  from {
+    background-color: rgb(18, 18, 19);
+  }
+  to {
+    background-color: rgb(58, 58, 60);
+  }
+}
+
+@keyframes correct-answer {
+  from {
+    background-color: rgb(58, 58, 60);
+    transform: rotate(0deg);
+  }
+  to {
+    background-color: rgb(85, 140, 81);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wrong-answer {
+  from {
+    background-color: rgb(58, 58, 60);
+    transform: rotate(0deg);
+  }
+  to {
+    background-color: rgb(58, 58, 60);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes answer-exists {
+  from {
+    background-color: rgb(58, 58, 60);
+    transform: rotate(0deg);
+  }
+  to {
+    background-color: rgb(180, 158, 67);
+    transform: rotate(360deg);
+  }
 }
