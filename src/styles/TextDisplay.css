@@ -52,23 +52,30 @@
   justify-content: center;
 }
 
-/*
+#location-0 {
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+}
+
 #location-1 {
-  animation-delay: 250ms;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
 }
 
 #location-2 {
-  animation-delay: 450ms;
+  animation-delay: 600ms;
+  animation-fill-mode: forwards;
 }
 
 #location-3 {
-  animation-delay: 650ms;
+  animation-delay: 900ms;
+  animation-fill-mode: forwards;
 }
 
 #location-4 {
-  animation-delay: 850ms;
+  animation-delay: 1200ms;
+  animation-fill-mode: forwards;
 }
-*/
 
 .text-right {
   animation: correct-answer 1s ease-in-out;
@@ -87,7 +94,7 @@
   font-size: 25px;
   margin: 3px;
   justify-content: center;
-  background-color: rgb(85, 140, 81);
+  background-color: rgb(58, 58, 60);
 }
 
 .text-wrong {
@@ -127,7 +134,7 @@
   font-size: 25px;
   margin: 3px;
   justify-content: center;
-  background-color: rgb(180, 158, 67);
+  background-color: rgb(58, 58, 60);
 }
 
 @keyframes active-text {
